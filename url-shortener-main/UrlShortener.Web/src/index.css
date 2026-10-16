@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+/* ── Design tokens (light mode) ── */
+:root {
+  color-scheme: light;
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-2: #f4f3ee;
+  --border: #e8e6e0;
+  --border-strong: #dad7cf;
+  --ink: #0f1115;
+  --muted: #3f4350;
+  --subtle: #8a8f9a;
+  --accent: #0f766e;
+  --accent-hover: #115e59;
+  --accent-fg: #ffffff;
+  --accent-soft: #ecfdf7;
+  --accent-soft-text: #0f766e;
+  --green: #15803d;
+  --green-soft: #e7f5ec;
+  --green-text: #15803d;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --danger-text: #dc2626;
+  --danger-brd: #f6d4d4;
+  --amber-soft: #f7efd9;
+  --amber-text: #92660e;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-brd: rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 1px 2px rgba(16,24,40,0.04), 0 4px 14px rgba(16,24,40,0.05);
+  --shadow-card-md: 0 1px 2px rgba(16,24,40,0.04), 0 8px 24px rgba(16,24,40,0.08);
+  --shadow-modal: 0 12px 40px rgba(16,24,40,0.18);
+  --ring: rgba(15, 118, 110, 0.22);
+}
+
+/* ── Design tokens (dark mode) ── */
+.dark {
+  color-scheme: dark;
+  --bg: #0e1014;
+  --surface: #181b21;
+  --surface-2: #21252c;
+  --border: #2a2e37;
+  --border-strong: #3a3f4a;
+  --ink: #f2f4f7;
+  --muted: #b3b9c4;
+  --subtle: #7b828e;
+  --accent: #14b8a6;
+  --accent-hover: #2dd4bf;
+  --accent-fg: #04201d;
+  --accent-soft: #0d2b29;
+  --accent-soft-text: #5eead4;
+  --green: #4ade80;
+  --green-soft: #102a1b;
+  --green-text: #4ade80;
+  --danger: #f87171;
+  --danger-soft: #2a1718;
+  --danger-text: #fca5a5;
+  --danger-brd: #4d2a2a;
+  --amber-soft: #2d2410;
+  --amber-text: #fbbf24;
+  --glass: rgba(20, 23, 28, 0.7);
+  --glass-brd: rgba(255, 255, 255, 0.07);
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 4px 14px rgba(0,0,0,0.45);
+  --shadow-card-md: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-modal: 0 12px 40px rgba(0,0,0,0.6);
+  --ring: rgba(45, 212, 191, 0.3);
+}
+
+/* ── Wire tokens into Tailwind v4 utilities ──
+   @theme inline means Tailwind generates classes that reference the
+   CSS variable — so bg-accent uses var(--accent) at runtime,
+   which means dark mode just needs to override the CSS variables. */
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-page:             var(--bg);
+  --color-surface:          var(--surface);
+  --color-surface-2:        var(--surface-2);
+  --color-border:           var(--border);
+  --color-border-strong:    var(--border-strong);
+  --color-ink:              var(--ink);
+  --color-muted:            var(--muted);
+  --color-subtle:           var(--subtle);
+  --color-accent:           var(--accent);
+  --color-accent-fg:        var(--accent-fg);
+  --color-accent-soft:      var(--accent-soft);
+  --color-accent-soft-text: var(--accent-soft-text);
+  --color-success:          var(--green);
+  --color-success-soft:     var(--green-soft);
+  --color-success-text:     var(--green-text);
+  --color-danger:           var(--danger);
+  --color-danger-soft:      var(--danger-soft);
+  --color-danger-text:      var(--danger-text);
+  --color-danger-brd:       var(--danger-brd);
+  --color-amber-soft:       var(--amber-soft);
+  --color-amber-text:       var(--amber-text);
+}
+
+/* ── Base ── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
